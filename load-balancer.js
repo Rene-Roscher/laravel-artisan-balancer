@@ -43,7 +43,11 @@ const loadBalancer = {
     },
 
     killProcesses: () => {
-        processes.forEach(process => process.kill());
+        console.log('Killing processes...');
+        processes.forEach(process => {
+            console.log('Killing process: ' + process.pid);
+            process.kill();
+        });
     },
 
 };
