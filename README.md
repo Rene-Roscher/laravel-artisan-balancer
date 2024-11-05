@@ -23,6 +23,27 @@ To stop the load balancer, press CTRL+C in the terminal where it is running. Thi
 node load-balancer.js C:\Users\Rene\Desktop\laravel-application\artisan 8
 ```
 
+# Example for Linux
+
+# Create the file /usr/local/bin/slb
+sudo nano /usr/local/bin/slb
+
+# Add the following script:
+```bash
+#!/bin/bash
+# Path to the Node.js file
+NODE_SCRIPT_PATH="/home/rene/PhpstormProjects/laravel-artisan-balancer/load-balancer.js"
+
+# Generate the first path parameter (current directory + artisan)
+ARTISAN_PATH="$(pwd)/artisan"
+
+# Execute the Node script with paths and arguments
+node "$NODE_SCRIPT_PATH" "$ARTISAN_PATH" "$1"
+```
+
+# Save and make it executable
+sudo chmod +x /usr/local/bin/slb
+
 # Example for Windows Powershell Profile
 - Open Windows Powershell.
 - Run the command: notepad $profile or code $profile

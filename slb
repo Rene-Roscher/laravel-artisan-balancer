@@ -1,0 +1,8 @@
+#!/bin/bash
+
+# Replace path by your own path
+NODE_SCRIPT_PATH="/home/rene/PhpstormProjects/laravel-artisan-balancer/load-balancer.js"
+
+ARTISAN_PATH="$(pwd)/artisan"
+
+node "$NODE_SCRIPT_PATH" "$ARTISAN_PATH" "$1"
